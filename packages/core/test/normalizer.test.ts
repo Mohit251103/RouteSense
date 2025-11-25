@@ -14,10 +14,10 @@ describe("normalizeRoute", () => {
 
     test("should normalize dynamic routes into internal format", () => {
         const result1 = normalizeRoute("/API/Users/[UserID]/");
-        const result2 = normalizeRoute("/API/Users/[...UserID]/");
+        const result2 = normalizeRoute("/API/Users/[...UserID]/[id]");
         const result3 = normalizeRoute("/API/Users/[[...UserID]]/");
         expect(result1).toEqual("/api/users/:userid");
-        expect(result2).toEqual("/api/users/*userid");
+        expect(result2).toEqual("/api/users/*userid/:id");
         expect(result3).toEqual("/api/users/?userid");
     })
 

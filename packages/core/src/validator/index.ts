@@ -1,8 +1,8 @@
 // Validator Module
 // This module provides functionality to validate route segments for correctness.
 
-import type { ValidatorResponse } from "./types";
-import { rules } from "./rules";
+import type { ValidatorResponse } from "../types";
+import { rules } from "../rules/validation.rules";
 
 /**
  * 
