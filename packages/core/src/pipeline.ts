@@ -4,11 +4,7 @@ import { classifier } from "./classifier";
 import { createRouteStore } from "./store/RouteStore";
 import type { ValidatorResponse, ClassifierResponse } from "./types";
 
-const routeStore = createRouteStore(
-    process.env.SEMANTIC_STORE,
-    process.env.TEMPLATE_STORE,
-    process.env.IGNORE_STORE
-);
+const routeStore = createRouteStore();
 
 /**
  * 
@@ -37,6 +33,7 @@ export async function processRoute(route: string, apiKey: string) {
     switch (classificationResponse.type) {
         case "semantic":
             await routeStore.addToSemanticStore(normalizedRoute, apiKey);
+            await routeStore.addToTemplateStore(normalizedRoute, apiKey);
             break;
 
         case "template":

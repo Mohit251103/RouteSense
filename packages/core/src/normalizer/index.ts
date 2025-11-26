@@ -2,16 +2,6 @@
 // This module provides functionality to normalize route strings for consistent processing.
 
 /**
- * Checks if a given segment is valid based on a specific pattern.
- * @param {string} segment Segment to be checked
- * @returns {boolean} - True if the segment is valid, false otherwise
- */
-function is_valid_segment(segment: string): boolean {
-    const isValid = /^[a-zA-Z_][a-zA-Z0-9_-]*$/.test(segment);
-    return isValid;
-}
-
-/**
  * Checks if a segment is a dynamic segment.
  * @param {string} segment Segment to be checked
  * @returns {boolean} - True if the segment is dynamic, false otherwise
